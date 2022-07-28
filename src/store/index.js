@@ -1,5 +1,5 @@
-import { createStore } from 'vuex';
-import { UserModule } from "./User";
+import { createStore } from 'vuex'
+import { UserModule } from './User'
 
 export default createStore({
   state: {},
