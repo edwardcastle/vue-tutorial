@@ -24,17 +24,17 @@
 </template>
 
 <script>
-import { reactive, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { users } from "../assets/users";
-import TwootItem from "../components/TwootItem";
-import CreateTwootPanel from "../components/CreateTwootPanel";
+import { reactive, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { users } from '../assets/users'
+import TwootItem from '../components/TwootItem'
+import CreateTwootPanel from '../components/CreateTwootPanel'
 
 export default {
-  name: "UserProfile",
+  name: 'UserProfile',
   components: { CreateTwootPanel, TwootItem },
-  setup() {
-    const route = useRoute();
+  setup () {
+    const route = useRoute()
     const userId = computed(() => route.params.userId)
 
     const state = reactive({
@@ -42,8 +42,8 @@ export default {
       user: users[userId.value - 1] || users[0]
     })
 
-    function addTwoot(twoot) {
-      state.user.twoots.unshift({ id: state.user.twoots.length + 1, content: twoot });
+    function addTwoot (twoot) {
+      state.user.twoots.unshift({ id: state.user.twoots.length + 1, content: twoot })
     }
 
     return {
@@ -52,7 +52,7 @@ export default {
       userId
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { users} from '@/assets/users'
+import { users } from '@/assets/users'
 
 export default {
   name: 'Home',
