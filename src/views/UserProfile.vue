@@ -1,9 +1,9 @@
 <template>
   <div class="user-profile">
-    <div class="user-profile__sidebar">
-      <div class="user-profile__user-panel">
-        <h1 class="user-profile__username">@{{ state.user.username }}</h1>
-        <div class="user-profile__admin-badge" v-if="state.user.isAdmin">
+    <div class="sidebar">
+      <div class="user-panel">
+        <h1 class="username">@{{ state.user.username }}</h1>
+        <div class="admin-badge" v-if="state.user.isAdmin">
           Admin
         </div>
         <div class="user-profile__follower-count">
@@ -12,7 +12,7 @@
       </div>
       <CreateTwootPanel @add-twoot="addTwoot"/>
     </div>
-    <div class="user-profile__twoots-wrapper">
+    <div class="twoots-wrapper">
       <TwootItem
           v-for="twoot in state.user.twoots"
           :key="twoot.id"
@@ -62,7 +62,7 @@ export default {
   grid-gap: 50px;
   padding: 50px 5%;
 
-  .user-profile__user-panel {
+  .user-panel {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -75,7 +75,7 @@ export default {
       margin: 0;
     }
 
-    .user-profile__admin-badge {
+    .admin-badge {
       background: rebeccapurple;
       color: white;
       border-radius: 5px;
@@ -85,7 +85,7 @@ export default {
     }
   }
 
-  .user-profile__twoots-wrapper {
+  .twoots-wrapper {
     display: grid;
     grid-gap: 10px;
     margin-bottom: auto;
